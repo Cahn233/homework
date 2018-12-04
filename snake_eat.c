@@ -22,10 +22,10 @@ char map[11][11]=
 "*        *",
 "*        *",
 "**********"
-};// ³õÊ¼»¯µØÍ¼ 
-int length=2,bo=1;//ÉßµÄ³¤¶ÈÒÔ¼°ÓÎÏ·ÊÇ·ñ½áÊøµÄ±êÖ¾ 
-int x[21]={0,1,1};//±íÊ¾ÉßÃ¿¸ö²¿Î»µÄx 
-int y[21]={0,2,1};//±íÊ¾ÉßÃ¿¸ö²¿Î»µÄy 
+};// åˆå§‹åŒ–åœ°å›¾ 
+int length=2,bo=1;//è›‡çš„é•¿åº¦ä»¥åŠæ¸¸æˆæ˜¯å¦ç»“æŸçš„æ ‡å¿— 
+int x[21]={0,1,1};//è¡¨ç¤ºè›‡æ¯ä¸ªéƒ¨ä½çš„x 
+int y[21]={0,2,1};//è¡¨ç¤ºè›‡æ¯ä¸ªéƒ¨ä½çš„y 
 void putmoney(){
 	int xx1=rand()%9+1;
 	int yy1=rand()%9+1;
@@ -67,23 +67,24 @@ void move(int addx,int addy){
 			}
 }
 void output(){
+	system("CLS");
 	for(int i=0;i<10;++i)
-			printf("%s\n",map[i]);//Êä³öµØÍ¼ 
+			printf("%s\n",map[i]);//è¾“å‡ºåœ°å›¾ 
 	}
 void GG(){
 	for(int i=1;i<10;++i) 
-	printf("Game Over!\n");//ÓÎÏ·½áÊø 
+	printf("Game Over!\n");//æ¸¸æˆç»“æŸ 
 }
 int main(){
-	putmoney();//·ÅÖÃÊ³Îï 
+	putmoney();//æ”¾ç½®é£Ÿç‰© 
 	while(bo){
-		output();//Êä³öµØÍ¼ 
+		output();//è¾“å‡ºåœ°å›¾ 
 		char ch=getchar();
-		while(ch!='A'&&ch!='D'&&ch!='W'&&ch!='S')ch=getchar();//Ö±µ½¶Áµ½ÓĞĞ§×Ö·û 
+		while(ch!='A'&&ch!='D'&&ch!='W'&&ch!='S')ch=getchar();//ç›´åˆ°è¯»åˆ°æœ‰æ•ˆå­—ç¬¦ 
 		if(ch=='A')move(0,-1);
 		else if(ch=='D')move(0,1);
 		else if(ch=='W')move(-1,0);
 		else if(ch=='S')move(1,0);
 }
-	GG();//ÓÎÏ·½áÊø 
+	GG();//æ¸¸æˆç»“æŸ 
 }
